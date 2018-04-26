@@ -17,14 +17,19 @@
             "email": "dao.hassane@themartiangeeks.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/marsphp/scheduler/issues",
+        "source": "https://github.com/marsphp/scheduler"
+    },
     "require": {
+        "php": ">=7.0",
         "mtdowling/cron-expression": "dev-master",
         "nesbot/carbon": "dev-master",
         "phpunit/phpunit": "^7.2@dev"
     },
     "autoload": {
         "psr-4": {
-            "Mars\\Schedule\\": "src/"
+            "Mars\\Scheduler\\": "src/"
         }
     },
     "autoload-dev": {

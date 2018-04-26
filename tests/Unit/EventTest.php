@@ -1,8 +1,8 @@
 <?php
 
 use Carbon\Carbon;
+use Mars\Scheduler\Event;
 use PHPUnit\Framework\TestCase;
-use Mars\Schedule\Scheduler\Event;
 
 class EventTest extends TestCase
 {

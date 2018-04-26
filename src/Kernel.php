@@ -1,6 +1,6 @@
 <?php
 
-namespace Mars\Schedule\Scheduler;
+namespace Mars\Scheduler;
 
 use Carbon\Carbon;
 
@@ -23,8 +23,8 @@ class Kernel
     }
 
     /**
-     * @param $event
-     * @return \Mars\Schedule\Scheduler\Event
+     * @param Event $event
+     * @return Event
      */
     public function add(Event $event)
     {

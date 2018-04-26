@@ -1,9 +1,9 @@
 <?php
 
 use Carbon\Carbon;
+use Mars\Scheduler\Event;
+use Mars\Scheduler\Kernel;
 use PHPUnit\Framework\TestCase;
-use Mars\Schedule\Scheduler\Event;
-use Mars\Schedule\Scheduler\Kernel;
 
 class KernelTest extends TestCase
 {

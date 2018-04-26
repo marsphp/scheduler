@@ -1,6 +1,6 @@
 <?php
 
-namespace Mars\Schedule\Scheduler;
+namespace Mars\Scheduler;
 
 trait Frequencies
 {

@@ -1,7 +1,6 @@
 <?php
 
-use Carbon\Carbon;
-use Mars\Schedule\Scheduler\Frequencies;
+use Mars\Scheduler\Frequencies;
 use PHPUnit\Framework\TestCase;
 
 class FrequenciesTest extends TestCase
