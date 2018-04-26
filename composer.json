@@ -5,15 +5,21 @@
     "license": "MIT",
     "authors": [
         {
+            "name": "The Martian Geeks",
+            "email": "contact@themartiangeeks.com"
+        },
+        {
             "name": "Houssene Dao",
-            "email": "dao.houssene@gmail.com"
+            "email": "dao.houssene@themartiangeeks.com"
         },
         {
             "name": "Hassane Dao",
-            "email": "dao.hassane@gmail.com"
+            "email": "dao.hassane@themartiangeeks.com"
         }
     ],
-    "require": {},
+    "require": {
+        "phpunit/phpunit": "^7.2@dev"
+    },
     "autoload": {
         "psr-4": {
             "Mars\\Scheduler\\": "src/"
