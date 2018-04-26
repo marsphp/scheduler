@@ -96,6 +96,64 @@ class FrequenciesTest extends TestCase
         $this->assertEquals($frequencies->expression, '*/45 * * * *');
     }
 
+    /** @test */
+    public function canSetHourlyAtTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->hourlyAt(45);
+
+        $this->assertEquals($frequencies->expression, '45 * * * *');
+    }
+
+    /** @test */
+    public function canSetHourlyTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->hourly();
+
+        $this->assertEquals($frequencies->expression, '0 * * * *');
+    }
+
+    /** @test */
+    public function canSetDailyAtTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->dailyAt(12, 30);
+
+        $this->assertEquals($frequencies->expression, '30 12 * * *');
+    }
+
+    /** @test */
+    public function canSetDailyTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->daily();
+
+        $this->assertEquals($frequencies->expression, '0 0 * * *');
+    }
+
+    /** @test */
+    public function canSetMontlyTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->monthly();
+
+        $this->assertEquals($frequencies->expression, '0 0 1 * *');
+    }
+
+    /** @test */
+    public function canSetAnnuallyTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->annually();
+
+        $this->assertEquals($frequencies->expression, '0 0 1 1 *');
+    }
+
+    /**
+     * Frequencies trait calling
+     * @return \PHPUnit\Framework\MockObject\MockObject
+     */
     protected function frequencies()
     {
         try {

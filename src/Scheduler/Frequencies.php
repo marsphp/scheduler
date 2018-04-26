@@ -5,7 +5,10 @@ namespace Mars\Schedule\Scheduler;
 
 trait Frequencies
 {
-
+    /**
+     * @param $expression
+     * @return $this
+     */
     public function cron($expression)
     {
         $this->expression = $expression;
@@ -13,61 +16,115 @@ trait Frequencies
         return $this;
     }
 
+    /**
+     * Every minutes
+     * @return $this
+     */
     public function everyMinute()
     {
-        $this->expression = '* * * * *';
-
-        return $this;
+        return $this->cron($this->expression);
     }
 
+    /**
+     * Every five minutes
+     * @return Frequencies
+     */
     public function everyFiveMinutes()
     {
-        $this->replaceIntoExpression(1, '*/5');
-
-        return $this;
+        return $this->replaceIntoExpression(1, '*/5');
     }
 
+    /**
+     * Every ten minutes
+     * @return Frequencies
+     */
     public function everyTenMinutes()
     {
-        $this->expression = '*/10 * * * *';
-
-        return $this;
+        return $this->replaceIntoExpression(1, '*/10');
     }
 
+    /**
+     * Every fifteen minutes
+     * @return Frequencies
+     */
     public function everyFifteenMinutes()
     {
-        $this->expression = '*/15 * * * *';
-
-        return $this;
+        return $this->replaceIntoExpression(1, '*/15');
     }
 
+    /**
+     * Every thirty minutes
+     * @return Frequencies
+     */
     public function everyThirtyMinutes()
     {
-        $this->expression = '*/30 * * * *';
-
-        return $this;
+        return $this->replaceIntoExpression(1, '*/30');
     }
 
+    /**
+     * Every forty five minutes
+     * @return Frequencies
+     */
     public function everyFortyFiveMinutes()
     {
-        $this->expression = '*/45 * * * *';
-
-        return $this;
+        return $this->replaceIntoExpression(1, '*/45');
     }
 
-    public function everyDay()
+    /**
+     * Hourly
+     * @return Frequencies
+     */
+    public function hourly()
     {
-
+        return $this->hourlyAt(0);
     }
 
-    public function everyMonth()
+    /**
+     * Hour At
+     * @param int $minute
+     * @return Frequencies
+     */
+    public function hourlyAt($minute = 1)
     {
-
+        return $this->replaceIntoExpression(1, $minute);
     }
 
-    public function everyYear()
+    /**
+     * Daily
+     * @return Frequencies
+     */
+    public function daily()
     {
+        return $this->dailyAt(0, 0);
+    }
 
+    /**
+     * Daily At
+     * @param int $hour
+     * @param int $minute
+     * @return Frequencies
+     */
+    public function dailyAt($hour = 0, $minute = 0)
+    {
+        return $this->replaceIntoExpression(1, [$minute, $hour]);
+    }
+
+    /**
+     * Monthly
+     * @return Frequencies
+     */
+    public function monthly()
+    {
+        return $this->replaceIntoExpression(1, [0, 0, 1]);
+    }
+
+    /**
+     * Annually
+     * @return Frequencies
+     */
+    public function annually()
+    {
+        return $this->replaceIntoExpression(1, [0, 0, 1, 1]);
     }
 
     /**
