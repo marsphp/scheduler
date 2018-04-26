@@ -15,7 +15,7 @@ Mars framework task scheduler
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Mars Schedule, please send an e-mail to Houssene Dao via [dao.houssene@themartiangeeks.com](mailto:dao.houssene@themartiangeeks.com) or Hassane Dao Houssene Dao via [dao.hassane@themartiangeeks.com](mailto:dao.hassane@themartiangeeks.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Mars Schedule, please send an e-mail to Houssene Dao via [dao.houssene@themartiangeeks.com](mailto:dao.houssene@themartiangeeks.com) or Hassane Dao via [dao.hassane@themartiangeeks.com](mailto:dao.hassane@themartiangeeks.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
