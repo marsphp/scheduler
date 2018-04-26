@@ -154,9 +154,90 @@ class FrequenciesTest extends TestCase
     public function canSetTwiceDailyTest()
     {
         $frequencies = $this->frequencies();
-        $frequencies->twiceDaily(1, 12);
+        $frequencies->twiceDaily(3, 10);
+
+        $this->assertEquals($frequencies->expression, '0 3,10 * * *');
+    }
+
+    /** @test */
+    public function canSetTwiceDailyDefaultTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->twiceDaily();
 
         $this->assertEquals($frequencies->expression, '0 1,12 * * *');
+    }
+
+    /** @test */
+    public function canSetDaysTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->days(1, 3, 5);
+
+        $this->assertEquals($frequencies->expression, '* * * * 1,3,5');
+    }
+
+    /** @test */
+    public function canSetMondaysTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->mondays();
+
+        $this->assertEquals($frequencies->expression, '* * * * 1');
+    }
+
+    /** @test */
+    public function canSetTuesdaysTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->tuesdays();
+
+        $this->assertEquals($frequencies->expression, '* * * * 2');
+    }
+
+    /** @test */
+    public function canSetWednesdaysTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->wednesdays();
+
+        $this->assertEquals($frequencies->expression, '* * * * 3');
+    }
+
+    /** @test */
+    public function canSetThursdaysTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->thursdays();
+
+        $this->assertEquals($frequencies->expression, '* * * * 4');
+    }
+
+    /** @test */
+    public function canSetFridaysTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->fridays();
+
+        $this->assertEquals($frequencies->expression, '* * * * 5');
+    }
+
+    /** @test */
+    public function canSetSaturdaysTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->saturdays();
+
+        $this->assertEquals($frequencies->expression, '* * * * 6');
+    }
+
+    /** @test */
+    public function canSetSundaysTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->sundays();
+
+        $this->assertEquals($frequencies->expression, '* * * * 7');
     }
 
     /**

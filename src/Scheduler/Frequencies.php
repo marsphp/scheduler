@@ -121,6 +121,80 @@ trait Frequencies
     }
 
     /**
+     * Twice Daily
+     * @param int $firstHour
+     * @param int $lastHour
+     * @return Frequencies
+     */
+    public function days($firstHour = 1, $lastHour = 12)
+    {
+        return $this->replaceIntoExpression(5, implode(',', func_get_args() ?: ['*']));
+    }
+
+    /**
+     * Mondays
+     * @return Frequencies
+     */
+    public function mondays()
+    {
+        return $this->days(1);
+    }
+
+    /**
+     * Tuesdays
+     * @return Frequencies
+     */
+    public function tuesdays()
+    {
+        return $this->days(2);
+    }
+
+    /**
+     * Wednesdays
+     * @return Frequencies
+     */
+    public function wednesdays()
+    {
+        return $this->days(3);
+    }
+
+    /**
+     * Thursdays
+     * @return Frequencies
+     */
+    public function thursdays()
+    {
+        return $this->days(4);
+    }
+
+    /**
+     * Fridays
+     * @return Frequencies
+     */
+    public function fridays()
+    {
+        return $this->days(5);
+    }
+
+    /**
+     * Saturdays
+     * @return Frequencies
+     */
+    public function saturdays()
+    {
+        return $this->days(6);
+    }
+
+    /**
+     * Sundays
+     * @return Frequencies
+     */
+    public function sundays()
+    {
+        return $this->days(7);
+    }
+
+    /**
      * Monthly
      * @return Frequencies
      */
