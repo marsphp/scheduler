@@ -18,11 +18,13 @@
         }
     ],
     "require": {
+        "mtdowling/cron-expression": "dev-master",
+        "nesbot/carbon": "dev-master",
         "phpunit/phpunit": "^7.2@dev"
     },
     "autoload": {
         "psr-4": {
-            "Mars\\Scheduler\\": "src/"
+            "Mars\\Schedule\\": "src/"
         }
     },
     "autoload-dev": {
