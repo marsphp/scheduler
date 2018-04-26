@@ -142,6 +142,15 @@ class FrequenciesTest extends TestCase
     }
 
     /** @test */
+    public function canSetMontlyOnSpecificTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->monthlyOn(10);
+
+        $this->assertEquals($frequencies->expression, '0 0 10 * *');
+    }
+
+    /** @test */
     public function canSetAnnuallyTest()
     {
         $frequencies = $this->frequencies();
@@ -238,6 +247,42 @@ class FrequenciesTest extends TestCase
         $frequencies->sundays();
 
         $this->assertEquals($frequencies->expression, '* * * * 7');
+    }
+
+    /** @test */
+    public function canSetWeekdaysTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->weekdays();
+
+        $this->assertEquals($frequencies->expression, '* * * * 1,2,3,4,5');
+    }
+
+    /** @test */
+    public function canSetWeekendsTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->weekends();
+
+        $this->assertEquals($frequencies->expression, '* * * * 6,7');
+    }
+
+    /** @test */
+    public function canSetAtTimeTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->at(12, 30);
+
+        $this->assertEquals($frequencies->expression, '30 12 * * *');
+    }
+
+    /** @test */
+    public function canSetDayAndTimeTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->at(12, 30)->weekends();
+
+        $this->assertEquals($frequencies->expression, '30 12 * * 6,7');
     }
 
     /**

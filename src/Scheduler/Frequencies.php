@@ -186,6 +186,24 @@ trait Frequencies
     }
 
     /**
+     * Weekdays
+     * @return Frequencies
+     */
+    public function weekdays()
+    {
+        return $this->days(1, 2, 3, 4, 5);
+    }
+
+    /**
+     * Weekends
+     * @return Frequencies
+     */
+    public function weekends()
+    {
+        return $this->days(6, 7);
+    }
+
+    /**
      * Sundays
      * @return Frequencies
      */
@@ -195,12 +213,33 @@ trait Frequencies
     }
 
     /**
+     * At
+     * @param int $hour
+     * @param int $minutes
+     * @return Frequencies
+     */
+    public function at($hour = 0, $minutes = 0)
+    {
+        return $this->dailyAt($hour, $minutes);
+    }
+
+    /**
      * Monthly
      * @return Frequencies
      */
     public function monthly()
     {
         return $this->replaceIntoExpression(1, [0, 0, 1]);
+    }
+
+    /**
+     * Monthly On
+     * @param int $day
+     * @return Frequencies
+     */
+    public function monthlyOn($day = 1)
+    {
+        return $this->replaceIntoExpression(1, [0, 0, $day]);
     }
 
     /**
