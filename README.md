@@ -7,9 +7,25 @@ Mars framework task scheduler
 
 ### How to use
 
-- [Install]()
-- [Configuration]()
-- [Use]()
+- [Install](#install)
+- [Configuration](#Configuration)
+- [How to use]()
+
+### Install
+
+`composer require marsphp/scheduler`
+
+### Configuration
+
+```PHP
+use Mars\Schedule\Scheduler\Kernel;
+
+$kernel = new Kernel;
+
+$kernel->add(new SomeEvent())->everyMinute();
+
+$kernel->run();
+```
 
 ## Contribute
 
