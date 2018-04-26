@@ -5,5 +5,6 @@ composer.phar
 composer.lock
 .DS_Store
 Thumbs.db
-/example.php
+/scheduler.php
 /phpunit.xml
+/src/Events/

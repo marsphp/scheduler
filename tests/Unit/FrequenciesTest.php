@@ -285,6 +285,15 @@ class FrequenciesTest extends TestCase
         $this->assertEquals($frequencies->expression, '30 12 * * 6,7');
     }
 
+    /** @test */
+    public function replacement_works_correctly()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->daily()->daily();
+
+        $this->assertEquals($frequencies->expression, '0 0 * * *');
+    }
+
     /**
      * Frequencies trait calling
      * @return \PHPUnit\Framework\MockObject\MockObject
