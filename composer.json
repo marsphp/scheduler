@@ -1,5 +1,5 @@
 {
-    "name": "marsphp/scheduler",
+    "name": "mars/scheduler",
     "description": "Mars framework task scheduler",
     "type": "library",
     "license": "MIT",
