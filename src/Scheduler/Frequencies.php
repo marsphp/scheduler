@@ -110,6 +110,17 @@ trait Frequencies
     }
 
     /**
+     * Twice Daily
+     * @param int $firstHour
+     * @param int $lastHour
+     * @return Frequencies
+     */
+    public function twiceDaily($firstHour = 1, $lastHour = 12)
+    {
+        return $this->replaceIntoExpression(1, [0, "{$firstHour},{$lastHour}"]);
+    }
+
+    /**
      * Monthly
      * @return Frequencies
      */

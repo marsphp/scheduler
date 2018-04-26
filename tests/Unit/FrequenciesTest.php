@@ -150,6 +150,15 @@ class FrequenciesTest extends TestCase
         $this->assertEquals($frequencies->expression, '0 0 1 1 *');
     }
 
+    /** @test */
+    public function canSetTwiceDailyTest()
+    {
+        $frequencies = $this->frequencies();
+        $frequencies->twiceDaily(1, 12);
+
+        $this->assertEquals($frequencies->expression, '0 1,12 * * *');
+    }
+
     /**
      * Frequencies trait calling
      * @return \PHPUnit\Framework\MockObject\MockObject
