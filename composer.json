@@ -23,9 +23,9 @@
     },
     "require": {
         "php": ">=7.0",
-        "mtdowling/cron-expression": "dev-master",
-        "nesbot/carbon": "dev-master",
-        "phpunit/phpunit": "^7.2@dev"
+        "mtdowling/cron-expression": "^1.2",
+        "nesbot/carbon": "^1.27",
+        "phpunit/phpunit": "^7.1"
     },
     "autoload": {
         "psr-4": {
