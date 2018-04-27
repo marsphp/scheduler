@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/houssenedao/scheduler.svg?branch=master)](https://travis-ci.org/houssenedao/scheduler)
+[![Build Status](https://travis-ci.org/marsphp/scheduler.svg?branch=master)](https://travis-ci.org/marsphp/scheduler)
 
 # Scheduler
 Mars framework task scheduler
@@ -8,12 +8,13 @@ Mars framework task scheduler
 ### How to use
 
 - [Install](#install)
-- [Configuration](#Configuration)
-- [How to use]()
+- [Configuration](#configuration)
+- [How to use](#how_to_use)
 
 ### Install
 
-`composer require mars/scheduler`
+For install this package you need [composer]() and PHP 7.0.* or latest. Installation command
+`$ composer require mars/scheduler`
 
 ### Configuration
 
@@ -26,6 +27,8 @@ $kernel->add(new SomeEvent())->everyMinute();
 
 $kernel->run();
 ```
+
+### How to use
 
 ## Contribute
 
