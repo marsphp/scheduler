@@ -1,0 +1,49 @@
+{
+    "name": "mars/scheduler",
+    "description": "Mars framework task scheduler",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "The Martian Geeks",
+            "email": "contact@themartiangeeks.com"
+        },
+        {
+            "name": "Houssene Dao",
+            "email": "dao.houssene@themartiangeeks.com"
+        },
+        {
+            "name": "Hassane Dao",
+            "email": "dao.hassane@themartiangeeks.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/marsphp/scheduler/issues",
+        "source": "https://github.com/marsphp/scheduler"
+    },
+    "require": {
+        "php": ">=7.0",
+        "mtdowling/cron-expression": "dev-master",
+        "nesbot/carbon": "dev-master",
+        "phpunit/phpunit": "^7.2@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mars\\Scheduler\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}
