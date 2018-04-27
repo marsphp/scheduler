@@ -19,7 +19,7 @@ For install this package you need [composer]() and PHP 7.0.* or latest. Installa
 ### Configuration
 
 ```PHP
-use Mars\Schedule\Scheduler\Kernel;
+use Mars\Scheduler\Kernel;
 
 $kernel = new Kernel;
 
@@ -35,11 +35,11 @@ First time create new class e.g `SomeEvent.php`
 ```PHP
 <?php
 
-namespace App\Events;
+namespace App\Jobs;
 
 use Mars\Scheduler\Event;
 
-class SomeEvent extends Event
+class SomeJob extends Event
 {
 
     public function handle()
@@ -48,6 +48,43 @@ class SomeEvent extends Event
     }
 }
 ```
+
+Next step add the kernel class in your class controller
+
+```PHP
+<?php
+
+namespace App\Controller;
+
+use Mars\Scheduler\Kernel;
+use App\Jobs\SomeJob;
+
+class SomeController
+{
+    public function getIndex()
+    {
+        $kernel = new Kernel;
+        
+        $kernel->add(new SomeJob())->everyMinute();
+    }
+}
+```
+
+When using the scheduler, you only need to add the following Cron entry to your server.
+- `* * * * * php /path-to-your-project/path-job/{command} >> /dev/null 2>&1`
+- `* * * * * php /path-to-your-project/path-job/{file} >> /dev/null 2>&1`
+- `* * * * * {url} >> /dev/null 2>&1`
+
+the content of these elements must be
+
+```PHP
+use Mars\Scheduler\Kernel;
+
+$kernel = new Kernel;
+
+$kernel->run();
+```
+
 
 ## Contribute
 
