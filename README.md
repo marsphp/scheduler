@@ -9,7 +9,7 @@ Mars framework task scheduler
 
 - [Install](#install)
 - [Configuration](#configuration)
-- [How to use](#howtouse)
+- [Use](#use)
 
 ### Install
 
@@ -28,7 +28,7 @@ $kernel->add(new SomeEvent())->everyMinute();
 $kernel->run();
 ```
 
-### How to use
+### Use
 
 ## Contribute
 
