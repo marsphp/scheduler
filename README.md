@@ -30,6 +30,25 @@ $kernel->run();
 
 ### Use
 
+First time create new class e.g `SomeEvent.php`
+
+```PHP
+<?php
+
+namespace App\Events;
+
+use Mars\Scheduler\Event;
+
+class SomeEvent extends Event
+{
+
+    public function handle()
+    {
+        //my action
+    }
+}
+```
+
 ## Contribute
 
 ## Security Vulnerabilities
