@@ -5,6 +5,4 @@ composer.phar
 composer.lock
 .DS_Store
 Thumbs.db
-/scheduler.php
 /phpunit.xml
-/src/Events/
