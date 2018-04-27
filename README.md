@@ -13,7 +13,7 @@ Mars framework task scheduler
 
 ### Install
 
-`composer require marsphp/scheduler`
+`composer require mars/scheduler`
 
 ### Configuration
 
