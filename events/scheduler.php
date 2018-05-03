@@ -2,14 +2,17 @@
 
 use Carbon\Carbon;
 use Events\SomeEvent;
+use Events\NewContentEvent;
 use Mars\Scheduler\Kernel;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $kernel = new Kernel;
 
-$kernel->setDate(Carbon::create(2018, 04, 27, 15, 00));
-
-$kernel->add(new SomeEvent())->hourly();
+$kernel->add(new SomeEvent())->everyMinute();
+$kernel->add(new NewContentEvent())->everyFiveMinutes();
+$kernel->add(new NewContentEvent())->everyTenMinutes();
+$kernel->add(new NewContentEvent())->everyThirtyMinutes();
+$kernel->add(new NewContentEvent())->everyFortyFiveMinutes();
 
 $kernel->run();
