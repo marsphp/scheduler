@@ -82,6 +82,8 @@ use Mars\Scheduler\Kernel;
 
 $kernel = new Kernel;
 
+$kernel->add(new SomeEvent())->everyMinute();
+
 $kernel->run();
 ```
 
